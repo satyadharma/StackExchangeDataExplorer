@@ -1,0 +1,82 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[SourceDeclaration]
+sourceUri	stackoverflow
+connectionUrl	jdbc:mysql://localhost:3306/stackoverflow
+username	root
+password	
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	User Mapping
+target		:user{Id} a :User ; :userId {Id}^^xsd:int ; :userReputation {Reputation}^^xsd:int ; :userCreationDate {CreationDate}^^xsd:dateTime ; :userDisplayName {DisplayName}^^xsd:string ; :userLastAccessDate {LastAccessDate}^^xsd:dateTime ; :userWebsiteUrl {WebsiteUrl}^^xsd:string ; :userLocation {Location}^^xsd:string ; :userAboutMe {AboutMe}^^xsd:string ; :userViews {Views}^^xsd:int ; :userUpVotes {UpVotes}^^xsd:int ; :userDownVotes {DownVotes}^^xsd:int ; :userEmailHash {EmailHash}^^xsd:string ; :userAccountId {AccountId}^^xsd:int ; :userAge {Age}^^xsd:int . 
+source		SELECT * FROM users
+
+mappingId	Question Post Mapping
+target		:question{Id} a :Question ; :QuestionAcceptedAnswer :post{AcceptedAnswerId} ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=1
+
+mappingId	Answer Post Mapping
+target		:answer{Id} a :Answer ; :AnswerParent :question{ParentId} ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=2
+
+mappingId	Orphaned Tag Wiki Mapping
+target		:orphanedTagWiki{Id} a :OrphanedTagWiki ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=3
+
+mappingId	Tag Wiki Excerpt Mapping
+target		:tagWikiExcerpt{Id} a :TagWikiExcerpt ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=4
+
+mappingId	Tag Wiki Mapping
+target		:tagWiki{Id} a :TagWiki ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=5
+
+mappingId	Moderator Nomination Mapping
+target		:moderatorNomination{Id} a :ModeratorNomination ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=6
+
+mappingId	Wiki Placeholder Mapping
+target		:wikiPlaceholder{Id} a :WikiPlaceholder ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=7
+
+mappingId	Privilege Wiki Mapping
+target		:privilegeWiki{Id} a :PrivilegeWiki ; :postCreationDate {CreationDate}^^xsd:dateTime ; :postScore {Score}^^xsd:int ; :postViewCount {ViewCount}^^xsd:int ; :postBody {Body}^^xsd:string ; :PostOwnerUser :user{OwnerUserId} ; :postOwnerDisplayName {OwnerDisplayName}^^xsd:string ; :PostLastEditor :user{LastEditorUserId} ; :postLastEditorDisplayName {LastEditorDisplayName}^^xsd:string ; :postLastEditDate {LastEditDate}^^xsd:dateTime ; :postLastActivityDate {LastActivityDate}^^xsd:dateTime ; :postTitle {Title}^^xsd:string ; :postAnswerCount {AnswerCount}^^xsd:int ; :postCommentCount {CommentCount}^^xsd:int ; :postFavoriteCount {FavoriteCount}^^xsd:int ; :postClosedDate {ClosedDate}^^xsd:dateTime ; :postCommunityOwnedDate {CommunityOwnedDate}^^xsd:dateTime . 
+source		SELECT * FROM Posts WHERE PostTypeId=8
+
+mappingId	Badge Mapping
+target		:badge{Id} a :Badge ; :BadgeUser :user{UserId} ; :badgeName {Name}^^xsd:string ; :badgeDate {Date}^^xsd:dateTime . 
+source		SELECT * FROM badges
+
+mappingId	Comment Mapping
+target		:comment{Id} a :Comment ; :CommentPost :post{PostId} ; :commentScore {Score}^^xsd:int ; :commentText {Text}^^xsd:string ; :commentCreationDate {CreationDate}^^xsd:dateTime ; :commentUserDisplayName {UserDisplayName}^^xsd:string ; :CommentUser :user{UserId} . 
+source		SELECT * FROM Comments
+
+mappingId	Post History Mapping
+target		:postHistory{Id} a :PostHistory ; :PostHistoryPost :post{PostId} ; :postHistoryRevisionGUID {RevisionGUID}^^xsd:int ; :postHistoryCreationDate {CreationDate}^^xsd:dateTime ; :PostHistoryUser :user{UserId} ; :postHistoryUserDisplayName {UserDisplayName}^^xsd:string ; :postHistoryComment {Comment}^^xsd:string ; :postHistoryText {Text}^^xsd:string . 
+source		SELECT * FROM Post_History
+
+mappingId	Duplicate Post Link Mapping
+target		:postLink{Id} a :PostLink ; :postLinkCreationDate {CreationDate}^^xsd:dateTime ; :PostLinkPost :post{PostId} ; :PostLinkRelatedPost :post{RelatedPostId} . 
+source		SELECT * FROM Post_Links WHERE LinkTypeId=1
+
+mappingId	Linked Post Link Mapping
+target		:postLink{Id} a :PostLink ; :postLinkCreationDate {CreationDate}^^xsd:dateTime ; :PostLinkPost :post{PostId} ; :PostLinkRelatedPost :post{RelatedPostId} . 
+source		SELECT * FROM Post_Links WHERE LinkTypeId=3
+
+mappingId	Tag Mapping
+target		:tag{Id} a :Tag ; :tagName {TagName}^^xsd:string ; :tagCount {Count}^^xsd:int ; :tagExcerptPostId {ExcerptPostId}^^xsd:int ; :tagWikiPostId {WikiPostId}^^xsd:int . 
+source		SELECT * FROM tags
+
+mappingId	Question Tag Mapping
+target		:question{Id} :PostTag :tag{TagId} . 
+source		SELECT Posts.Id, Post_Tags.TagId
+			FROM Post_Tags, Posts
+			WHERE Post_Tags.id=Posts.Id AND Posts.PostTypeId=1
+]]
+

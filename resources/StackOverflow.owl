@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/"
+     xml:base="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/AnswerParent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/AnswerParent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Answer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/BadgeUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/BadgeUser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Badge"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/CommentPost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/CommentPost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/CommentUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/CommentUser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistoryPost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistoryPost">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistoryUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistoryUser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLastEditor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLastEditor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLinkPost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLinkPost">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLinkRelatedPost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLinkRelatedPost">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostOwnerUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostOwnerUser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostTag -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostTag"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/QuestionAcceptedAnswer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/QuestionAcceptedAnswer">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Question"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/VotePost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/VotePost">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/VoteUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/VoteUser">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/badgeDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/badgeDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Badge"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/badgeName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/badgeName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Badge"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentCreationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentUserDisplayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/commentUserDisplayName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postAnswerCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postAnswerCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postBody -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postBody">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postClosedDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postClosedDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postCommentCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postCommentCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postCommunityOwnedDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postCommunityOwnedDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postCreationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postFavoriteCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postFavoriteCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryComment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryComment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryCreationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryRevisionGUID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryRevisionGUID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryTypeId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryTypeId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryUserDisplayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postHistoryUserDisplayName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLastActivityDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLastActivityDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLastEditDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLastEditDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLastEditorDisplayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLastEditorDisplayName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLinkCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postLinkCreationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postOwnerDisplayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postOwnerDisplayName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postViewCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/postViewCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Tag"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagExcerptPostId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagExcerptPostId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Tag"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Tag"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagWikiPostId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/tagWikiPostId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Tag"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userAboutMe -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userAboutMe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userAccountId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userAccountId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userCreationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userDisplayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userDisplayName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userDownVotes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userDownVotes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userEmailHash -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userEmailHash">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userLastAccessDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userLastAccessDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userLocation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userReputation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userReputation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userUpVotes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userUpVotes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userViews -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userViews">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userWebsiteUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/userWebsiteUrl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/voteBountyAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/voteBountyAmount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/voteCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/voteCreationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/voteTypeId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/voteTypeId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Answer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Answer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Badge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Badge"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Comment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/DuplicatePostLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/DuplicatePostLink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/LinkedPostLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/LinkedPostLink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/ModeratorNomination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/ModeratorNomination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/OrphanedTagWiki -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/OrphanedTagWiki">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostHistory"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PostLink"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PrivilegeWiki -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/PrivilegeWiki">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Question -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Question">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Tag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Tag"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/TagWiki -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/TagWiki">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/TagWikiExcerpt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/TagWikiExcerpt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/User"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Vote"/>
+    
+
+
+    <!-- http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/WikiPlaceholder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/WikiPlaceholder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/satyadharma/ontologies/stackoverflow/Post"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
